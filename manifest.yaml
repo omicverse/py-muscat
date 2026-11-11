@@ -1,0 +1,24 @@
+{
+  "upstream": "muscat",
+  "commit": "861683175a1804430ced420397e72fff16fe92ed",
+  "seed": 42,
+  "scope": [
+    "aggregate_data",
+    "pb_ds"
+  ],
+  "outputs": {
+    "deterministic": {
+      "atol": 1e-08,
+      "rtol": 1e-08
+    },
+    "projection": {
+      "atol": 1e-08
+    },
+    "pvalues": {
+      "spearman_min": 0.99,
+      "top20_jaccard_min": 0.9,
+      "atol": 1e-06
+    }
+  },
+  "status": "preregistered; no candidate tested"
+}
