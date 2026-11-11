@@ -1,0 +1,119 @@
+{
+  "schema": "omicverse-port/v1",
+  "package": "py-muscat",
+  "pypi": null,
+  "import_name": "pymuscat",
+  "language": "python",
+  "upstream": {
+    "name": "muscat",
+    "version": "1.26.0",
+    "commit": "861683175a1804430ced420397e72fff16fe92ed"
+  },
+  "parity": {
+    "status": "partial",
+    "fixture": "Pinned synthetic fixtures; muscat also includes a public Kang subset",
+    "test": "tests/"
+  },
+  "functions": [
+    {
+      "r": "aggregateData",
+      "py": "pymuscat.aggregate_data",
+      "status": "partial",
+      "note": "Matrix/default-path subset; see README"
+    },
+    {
+      "r": "bbhw",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "calcExprFreqs",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "gBH",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "mmDS",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "pbDD",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "pbDS",
+      "py": "pymuscat.pb_ds",
+      "status": "partial",
+      "note": "Matrix/default-path subset; see README"
+    },
+    {
+      "r": "pbFlatten",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "pbHeatmap",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "pbMDS",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "prepSCE",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "prepSim",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "resDS",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "simData",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    },
+    {
+      "r": "stagewise_DS_DD",
+      "py": null,
+      "status": "skipped",
+      "note": "Outside this initial algorithm subset"
+    }
+  ],
+  "omicverse": {
+    "module": null,
+    "since": null
+  },
+  "artifacts": {
+    "audit": "AUDIT.md",
+    "report": "RECONSTRUCTION_REPORT.md",
+    "compare_notebook": "examples/compare_R_vs_Python.ipynb",
+    "function_notebook": "examples/function_by_function_R_parity.ipynb"
+  }
+}

@@ -1,0 +1,73 @@
+# Attribution
+
+Upstream muscat 1.26.0, commit 861683175a1804430ced420397e72fff16fe92ed.
+Algorithms reconstructed from the upstream source under the accompanying LICENSE.
+Upstream author declarations:
+
+```
+Package: muscat
+Title: Multi-sample multi-group scRNA-seq data analysis tools
+Description: `muscat` provides various methods and visualization tools
+    for DS analysis in multi-sample, multi-group, multi-(cell-)subpopulation
+    scRNA-seq data, including cell-level mixed models and methods based on
+    aggregated “pseudobulk” data, as well as a flexible simulation platform
+    that mimics both single and multi-sample scRNA-seq data.
+Type: Package
+Version: 1.26.0
+Depends: R (>= 4.6)
+Authors@R: c(
+	person("Helena L.", "Crowell",
+	    role=c("aut", "cre"),
+	    email="helena@crowell.eu",
+	    comment=c(ORCID="0000-0002-4801-1767")),
+	person("Pierre-Luc", "Germain", role="aut"),
+	person("Charlotte", "Soneson", role="aut"),
+	person("Anthony", "Sonrel", role="aut"),
+	person("Jeroen", "Gilis", role="aut"),
+	person("Davide", "Risso", role="aut"),
+	person("Lieven", "Clement", role="aut"),
+	person("Mark D.", "Robinson", role=c("aut", "fnd"),
+	    email="mark.robinson@imls.uzh.ch"))
+Imports:
+	BiocParallel, blme,
+	ComplexHeatmap,
+	dplyr,
+	edgeR,
+	ggplot2, glmmTMB, grDevices, grid,
+	limma, lmerTest, lme4,
+	Matrix, MatrixGenerics, matrixStats, methods,
+	progress,
+	rlang,
+	S4Vectors, scales, scater, scuttle, stats,
+	SingleCellExperiment, SummarizedExperiment,
+	variancePartition
+Suggests:
+	BiocStyle,
+	countsimQC,
+	DESeq2,
+	AnnotationHub,
+	ExperimentHub,
+	iCOBRA,
+	IHW,
+	knitr,
+	patchwork,
+	phylogram,
+	RColorBrewer,
+	reshape2,
+	rmarkdown,
+	sctransform,
+	statmod,
+	stageR,
+	testthat,
+	tidyr,
+	UpSetR
+biocViews: ImmunoOncology, DifferentialExpression, Sequencing,
+    SingleCell, Software, StatisticalMethod, Visualization
+License: GPL-3
+VignetteBuilder: knitr
+RoxygenNote: 7.3.3
+Encoding: UTF-8
+URL: https://github.com/HelenaLC/muscat
+BugReports: https://github.com/HelenaLC/muscat/issues
+
+```
