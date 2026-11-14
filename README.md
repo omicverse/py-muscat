@@ -1,12 +1,18 @@
 # py-muscat
 
-Review-stage Python reconstruction of a **subset** of muscat, following the discovery, preregistration and reference-validation workflow in [omicverse-rebuildr](https://github.com/omicverse/omicverse-rebuildr).
+Python reconstruction of a **subset** of muscat, following the discovery, preregistration and reference-validation workflow in [omicverse-rebuildr](https://github.com/omicverse/omicverse-rebuildr).
 
 Sum pseudobulks and explicit-design/contrast pbDS with edgeR or limma-voom. No mixed models, limma-trend, treat, DESeq2, simulation framework or automatic design inference.
 
 ## Install and test
 
-This project has not been published on PyPI. From this checkout:
+Version **0.1.0** is available on [PyPI](https://pypi.org/project/py-muscat-omicverse/0.1.0/):
+
+```bash
+python -m pip install "py-muscat-omicverse==0.1.0"
+```
+
+For development and source-checkout tests:
 
 ```bash
 python -m pip install ".[test]"
@@ -40,6 +46,6 @@ All other primary fixtures are synthetic and do not establish biological accurac
 
 Upstream [muscat](https://github.com/HelenaLC/muscat) at `861683175a1804430ced420397e72fff16fe92ed`; see ATTRIBUTION.md for upstream authors and package citation context, and LICENSE for terms.
 
-## Distribution preparation
+## Release validation
 
-The intended PyPI distribution is `py-muscat-omicverse`; the import remains `pymuscat`. See [release preparation](RELEASE.md) for installed-wheel validation and the manual Trusted Publishing procedure. This preparation does not mean a PyPI release is available.
+The PyPI distribution is `py-muscat-omicverse`; the import remains `pymuscat`. On 2026-11-14, the actual PyPI 0.1.0 package was installed in a new Python 3.12 environment and validated against the reference fixtures from its published source archive: **6 passed, no skips**. Tests ran outside the source checkout and imports came from site-packages. See [release workflow](RELEASE.md) for installed-wheel validation and manual Trusted Publishing.
