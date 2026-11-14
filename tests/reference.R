@@ -1,0 +1,33 @@
+library(SingleCellExperiment)
+library(scuttle)
+library(scater)
+library(BiocParallel)
+library(MatrixGenerics)
+library(edgeR)
+library(limma)
+library(dplyr)
+ref<-commandArgs(TRUE)[1]
+for(f in c('validity-checks.R','utils.R','utils-pbDS.R','aggregateData.R','pbDS.R')) source(file.path(ref,'R',f))
+set.seed(42)
+meta<-expand.grid(cell=1:12,cluster_id=c('A','B'),sample_id=paste0('s',1:8))
+meta<-meta[!(meta$cluster_id=='B' & meta$sample_id=='s1'),]
+meta$group_id<-factor(ifelse(meta$sample_id %in% paste0('s',1:4),'ctrl','stim'))
+rownames(meta)<-paste0('cell',seq_len(nrow(meta)))
+x<-matrix(rnbinom(80*nrow(meta),mu=8,size=5),80,nrow(meta))
+x[1:10,meta$group_id=='stim' & meta$cluster_id=='A']<-x[1:10,meta$group_id=='stim' & meta$cluster_id=='A']+5
+rownames(x)<-paste0('g',1:80);colnames(x)<-rownames(meta)
+sce<-SingleCellExperiment(list(counts=x),colData=meta)
+metadata(sce)$experiment_info<-unique(meta[,c('sample_id','group_id')])
+pb<-aggregateData(sce,verbose=FALSE)
+design<-model.matrix(~group_id,data=as.data.frame(colData(pb)))
+rownames(design)<-colnames(pb)
+contrast<-matrix(c(0,1),2,1,dimnames=list(colnames(design),'stim'))
+write.csv(x,'data/counts.csv');write.csv(meta,'data/metadata.csv')
+write.csv(design,'data/design.csv');write.csv(contrast,'data/contrast.csv')
+write.csv(as.matrix(.n_cells(pb)),'data/n_cells.csv')
+for(k in assayNames(pb))write.csv(assay(pb,k),paste0('data/aggregate_',k,'.csv'))
+for (method in c('edgeR','limma-voom')) {
+    result<-pbDS(pb,method=method,design=design,contrast=contrast,min_cells=10,filter='both',verbose=FALSE)
+    write.csv(do.call(rbind,result$table$stim),paste0('data/',method,'.csv'),row.names=FALSE)
+}
+writeLines(c(paste('edgeR',packageVersion('edgeR')),paste('limma',packageVersion('limma'))),'data/R_versions.txt')

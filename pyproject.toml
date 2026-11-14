@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "py-muscat-omicverse"
+version = "0.1.0"
+readme = "README.md"
+description = "Reference-validated py-muscat algorithm subset"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = ["numpy>=1.23", "scipy>=1.10", "pandas>=1.5", "anndata>=0.10", "pyedger>=0.2.3", "python-limma>=0.1.1"]
+[project.urls]
+Repository = "https://github.com/omicverse/py-muscat"
+Issues = "https://github.com/omicverse/py-muscat/issues"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+[tool.setuptools.packages.find]
+include = ["pymuscat*"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "ATTRIBUTION.md"]

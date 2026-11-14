@@ -1,0 +1,13 @@
+......                                                                   [100%]
+============================== warnings summary ===============================
+tests/test_parity.py::test_aggregation
+tests/test_parity.py::test_differential_state[edgeR]
+tests/test_parity.py::test_differential_state[limma-voom]
+tests/test_parity.py::test_conflicting_sample_labels
+tests/test_parity.py::test_public_kang_subset[edgeR]
+tests/test_parity.py::test_public_kang_subset[limma-voom]
+  C:\Users\Administrator.DESKTOP-OMUJLUF\.codex\workspaces\roadmap989-20261111\fresh-env\Lib\site-packages\anndata\compat\__init__.py:249: Pandas4Warning: The 'future.infer_string' option is deprecated and will be removed in pandas 4.0. Inferring str dtype for string data has been the default since pandas 3.0, and it will no longer be possible to disable it.
+    return a if pd.options.future.infer_string else a.astype(object)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 6 warnings in 19.88s
