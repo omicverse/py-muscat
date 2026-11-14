@@ -39,3 +39,7 @@ All other primary fixtures are synthetic and do not establish biological accurac
 ## Citation and license
 
 Upstream [muscat](https://github.com/HelenaLC/muscat) at `861683175a1804430ced420397e72fff16fe92ed`; see ATTRIBUTION.md for upstream authors and package citation context, and LICENSE for terms.
+
+## Distribution preparation
+
+The intended PyPI distribution is `py-muscat-omicverse`; the import remains `pymuscat`. See [release preparation](RELEASE.md) for installed-wheel validation and the manual Trusted Publishing procedure. This preparation does not mean a PyPI release is available.
